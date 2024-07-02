@@ -1,0 +1,13 @@
+<h1>Edit Task</h1>
+<%= form_with model: @task do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
+  <%= f.label :details, "Details" %>
+  <%= f.text_field :details %>
+  <% unless @task.new_record? %>
+    <%= f.label :completed, "Completed?" %>
+    <%= f.check_box :completed %>
+  <% end %>
+  <%= f.submit "Update Task" %>
+  <%= link_to "Back to list", tasks_path %>
+<% end %>
